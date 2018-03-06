@@ -1,4 +1,7 @@
-let answer = document.getElementById('answer');
+//let answer = document.getElementById('answer');
+let answer = {
+    value: ''
+};
 let attempt = document.getElementById('attempt');
 
 function guess() {
