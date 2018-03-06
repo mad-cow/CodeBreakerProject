@@ -29,7 +29,11 @@ function getResults(input) {
         }
     }
 
-    html += '</div></div>'
+    html += '</div></div>';
+
+    document.getElementById('results').innerHTML += html;
+
+    return correct == input.length;
 }
 
 function setHiddenFields() {
