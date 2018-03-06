@@ -9,13 +9,28 @@ function guess() {
     }
 
     if ( !validateInput(input.value) ) {
-        return false;
+        return;
     } else {
         attempt.value++;
     }
 }
 
-//implement new functions here
+function getResults(input) {
+    let correct = 0;
+    let html = '<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">';
+    for ( let i = 0; i < input.length; i++ ) {
+        if ( input.charAt(i) == answer.value.charAt(i) ) {
+            html += '<span class="glyphicon glyphicon-ok"></span>';
+            correct++;
+        } else if ( answer.value.indexOf(input.charAt(i)) > -1 ) {
+            html += '<span class="glyphicon glyphicon-transfer"></span>';
+        } else {
+            html += '<span class="glyphicon glyphicon-remove"></span>';
+        }
+    }
+
+    html += '</div></div>'
+}
 
 function setHiddenFields() {
     answer.value = Math.floor(Math.random() * 9999).toString();
