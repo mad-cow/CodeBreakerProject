@@ -66,6 +66,11 @@ function showAnswer(success) {
     code.innerHTML = answer.value;
 }
 
+function showReplay() {
+    document.getElementById('guessing-div').style.display = 'none';
+    document.getElementById('replay-div').style.display = 'block';
+}
+
 function validateInput(input) {
     if ( input.length !== 4 ) {
         setMessage('Guesses must be exactly 4 characters long.');
